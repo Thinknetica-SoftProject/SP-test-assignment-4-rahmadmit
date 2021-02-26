@@ -16,6 +16,16 @@
 #
 ## Решение:
 
+current_path = File.dirname(__FILE__)
+instruction = IO.read(current_path + '/data/1.txt')
+floor = 0
 
+for symbol in instruction.split('') do
+    if (symbol == '(')
+        floor += 1
+    else 
+        floor -= 1
+    end
+end
 
-
+puts floor

@@ -16,4 +16,18 @@
 #
 ## Решение:
 
+def one_gift_wrapping(gift)
+    return 2 * (gift[0] * gift[1] + gift[0] * gift[2] + gift[1] * gift[2]) + gift[0] * gift[1]
+end
 
+current_path = File.dirname(__FILE__)
+gifts = IO.readlines(current_path + '/data/4.txt')
+wrapper_size = 0
+
+for line in gifts do
+    numbers = line.split("x")
+    numbers.map!{ |num| num.to_i }.sort!
+    wrapper_size += one_gift_wrapping(numbers)
+end
+
+puts wrapper_size

@@ -10,4 +10,14 @@
 #
 ## Решение:
 
+current_path = File.dirname(__FILE__)
+instruction = IO.readlines(current_path + '/data/3.txt')
+code = 0
 
+for line in instruction do
+    numbers = line.split("\t")
+    numbers.map!{ |num| num.to_i }
+    code += numbers.max - numbers.min
+end
+
+puts code
