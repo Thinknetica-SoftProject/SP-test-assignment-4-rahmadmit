@@ -20,10 +20,10 @@ current_path = File.dirname(__FILE__)
 instruction = IO.read(current_path + '/data/1.txt')
 floor = 0
 
-for symbol in instruction.split('') do
+for symbol in instruction.split('')[0...-1] do
     if (symbol == '(')
         floor += 1
-    else 
+    else
         floor -= 1
     end
 end
